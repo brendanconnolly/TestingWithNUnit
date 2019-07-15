@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RestfulBooker.Api\RestfulBooker.Api.csproj" />
     <ProjectReference Include="..\RestfulBooker.UI\RestfulBooker.UI.csproj" />
   </ItemGroup>
 

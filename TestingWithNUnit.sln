@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingWithNUnit.Tests", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulBooker.UI", "RestfulBooker.UI\RestfulBooker.UI.csproj", "{8A62A406-F873-4550-BE60-F36AACB589E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulBooker.Api", "RestfulBooker.Api\RestfulBooker.Api.csproj", "{AB283CA7-D9CC-42FD-9B91-450F39158479}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{8A62A406-F873-4550-BE60-F36AACB589E2}.Release|x64.Build.0 = Release|Any CPU
 		{8A62A406-F873-4550-BE60-F36AACB589E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A62A406-F873-4550-BE60-F36AACB589E2}.Release|x86.Build.0 = Release|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Debug|x64.Build.0 = Debug|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Debug|x86.Build.0 = Debug|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Release|x64.ActiveCfg = Release|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Release|x64.Build.0 = Release|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Release|x86.ActiveCfg = Release|Any CPU
+		{AB283CA7-D9CC-42FD-9B91-450F39158479}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
