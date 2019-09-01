@@ -19,4 +19,8 @@
     <ProjectReference Include="..\RestfulBooker.UI\RestfulBooker.UI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="AdminTests_original.cs" />
+  </ItemGroup>
+
 </Project>

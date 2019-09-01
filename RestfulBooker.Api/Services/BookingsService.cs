@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using RestfulBooker.Api.Data;
+using RestfulBooker.Api.Services;
 using RestSharp;
+using RestSharp.Serialization.Json;
+using RestSharp.Serializers;
 
-namespace RestfulBooker.Api
+namespace RestfulBooker.Api.Services
 {
     public class BookingsService
     {
@@ -40,6 +43,14 @@ namespace RestfulBooker.Api
             var response = _client.Get<Booking>(request);
             return response.Data;
 
+        }
+
+        public CreatedBooking CreateBooking(Booking booking)
+        {
+            var request = new RestRequest(ServiceEndPoint, Method.POST);
+            request.AddJsonBody(booking);
+            var response = _client.Execute<CreatedBooking>(request);
+            return response.Data;
         }
     }
 }

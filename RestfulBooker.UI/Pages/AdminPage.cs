@@ -40,11 +40,20 @@ namespace RestfulBooker.UI.Pages
             By usernameSelector=By.CssSelector("[data-testid='username']"); 
             By passwordSelector=By.CssSelector("[data-testid='password']");
             By loginButtonSelector=By.CssSelector("[data-testid='submit']");
-            
-            _driver.FindElement(usernameSelector).SendKeys(username);
+
+            WebDriverWait webdriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+            var usernameElement= webdriverWait.Until(x => x.FindElement(usernameSelector));
+
+            usernameElement.SendKeys(username);
             _driver.FindElement(passwordSelector).SendKeys(password);
             _driver.FindElement(loginButtonSelector).Click();
             
+        }
+
+        public void LogOut()
+        {
+            By logoutButtonSelector=By.CssSelector("a[href$='admin']");
+            _driver.FindElement(logoutButtonSelector).Click();
         }
 
         public void AddRoom(Room room)
