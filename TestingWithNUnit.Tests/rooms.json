@@ -1,0 +1,17 @@
+
+[
+  {
+    "TestName": "Double Room",
+    "Description": "",
+    "Categories": ["room","double"],
+    "IsExplicit": false,
+    "IsIgnored": false,
+    
+    "RoomData": {
+      "Number": "10",
+      "Price": "100",
+      "Type": "Double"
+    }
+    
+  }
+]

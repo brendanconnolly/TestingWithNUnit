@@ -1,3 +1,6 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace RestfulBooker.UI.Data
 {
     public enum RoomType
@@ -12,6 +15,7 @@ namespace RestfulBooker.UI.Data
     {
         public string Number { get; set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         public RoomType Type { get; set; }
 
         public bool Accessible { get; set; }

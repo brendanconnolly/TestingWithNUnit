@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="nunit" Version="3.11.0" />
+    <PackageReference Include="NUnit.Console" Version="3.10.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="NunitXml.TestLogger" Version="2.1.41" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="75.0.3770.90" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="77.0.3865.4000" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +23,12 @@
 
   <ItemGroup>
     <Compile Remove="AdminTests_original.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="rooms.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
