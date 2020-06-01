@@ -15,8 +15,7 @@ namespace TestingWithNUnit.Tests
 
     public class AdminTests:UITest
     {
-
-        public AdminPage adminPage { get; set; }
+        private AdminPage adminPage { get; set; }
 
         [SetUp]
         public void SetupTest()
