@@ -12,6 +12,7 @@ namespace RestfulBooker.UI.Pages
         private readonly IWebDriver _driver;
         private readonly string adminUrl = "https://automationintesting.online/#/admin";
 
+        private By _logoutButtonSelector=By.CssSelector("a[class='nav-link'][href$='admin']");
         public AdminPage(IWebDriver driver)
         {
             _driver = driver;
@@ -41,19 +42,28 @@ namespace RestfulBooker.UI.Pages
             By passwordSelector=By.CssSelector("[data-testid='password']");
             By loginButtonSelector=By.CssSelector("[data-testid='submit']");
 
-            WebDriverWait webdriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-            var usernameElement= webdriverWait.Until(x => x.FindElement(usernameSelector));
+            var logoutVisible = _driver.FindElements(_logoutButtonSelector).Count > 0;
 
-            usernameElement.SendKeys(username);
-            _driver.FindElement(passwordSelector).SendKeys(password);
-            _driver.FindElement(loginButtonSelector).Click();
-            
+            if (!logoutVisible)
+            {
+                WebDriverWait webdriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+                var usernameElement = webdriverWait.Until(x => x.FindElement(usernameSelector));
+
+                usernameElement.SendKeys(username);
+                _driver.FindElement(passwordSelector).SendKeys(password);
+                _driver.FindElement(loginButtonSelector).Click();
+            }
+
         }
 
         public void LogOut()
         {
+            //the logout button doesn't seem to be working '
             By logoutButtonSelector=By.CssSelector("a[href$='admin']");
-            _driver.FindElement(logoutButtonSelector).Click();
+            
+            WebDriverWait webdriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+            var logoutButtonElement= webdriverWait.Until(x => x.FindElement(logoutButtonSelector));
+            logoutButtonElement.Click();
         }
 
         public void AddRoom(Room room)

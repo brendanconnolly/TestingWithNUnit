@@ -5,7 +5,7 @@ using RestfulBooker.Api.Data;
 
 namespace TestingWithNUnit.Tests
 {
-    public class ApiTest
+    public class BookerApiTest
     {
         [Test]
         public void GetBookingsTest()
@@ -22,7 +22,6 @@ namespace TestingWithNUnit.Tests
             var bookingsApi = new RestfulBookerClient("admin", "password", "https://automationintesting.online");
             var booking = new Booking()
             {
-                roomid = 1,
                 firstname = "Johnny",
                 lastname = "Five",
                 totalprice = 123,

@@ -22,10 +22,4 @@
     <ProjectReference Include="..\RestfulBooker.UI\RestfulBooker.UI.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="rooms.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

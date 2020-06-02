@@ -4,15 +4,16 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using RestfulBooker.UI.Data;
 using RestfulBooker.UI.Pages;
+using TestingWithNUnit.Tests.Data;
 
 
 namespace TestingWithNUnit.Tests
 {
     [TestFixture(1)]
     
-    public class DataDrivenTests:UITest
+    public class BookerDataDrivenTests:UITest
     {
-        public DataDrivenTests(int customerId)
+        public BookerDataDrivenTests(int customerId)
         {
             CustomerId = customerId;
         }
@@ -28,7 +29,6 @@ namespace TestingWithNUnit.Tests
             adminPage = new AdminPage(driver);
             adminPage.Login();
         }
-
         
         [TearDown]
         public void CleanUpTests()
@@ -45,14 +45,6 @@ namespace TestingWithNUnit.Tests
 
             adminPage.LogOut();
         }
-        
-
-        
-        
-        
-        
-        
-        
         
         [TestCaseSource(typeof(TestData),nameof(TestData.RoomInfo))]
         public void AddRoom(
@@ -78,15 +70,6 @@ namespace TestingWithNUnit.Tests
             Assert.That(createdRoom.Price, Is.EqualTo(room.Price));
             Assert.That(createdRoom.Accessible, Is.EqualTo(room.Accessible));
         }
-        
-        
-        
-        
-        
-        
-        
-        
-      
         
         [Test]
         public void AddRoomWithValueSource(
@@ -117,11 +100,7 @@ namespace TestingWithNUnit.Tests
             });
         }
 
-        
-        
-        
-        
-        
+
         [TestCaseSource(typeof(TestData),nameof(TestData.RoomsFromJsonFile))]
         public void AddRoomWithUsingRoomObject(Room room)
         {
@@ -153,8 +132,8 @@ namespace TestingWithNUnit.Tests
 
         
         
-        //[TestCase("9","999",false,RoomType.Family,TestName = "")]
-        //[TestCase("10","500",true,RoomType.Double,Description = "")]
+        [TestCase("9","999",false,RoomType.Family,TestName = "")]
+        [TestCase("10","500",true,RoomType.Double,Description = "")]
         public void AddRoomWithTestCases(
             string roomNumber, string Price, bool accessible,RoomType roomType)
         {
@@ -179,13 +158,7 @@ namespace TestingWithNUnit.Tests
             Assert.That(createdRoom.Accessible, Is.EqualTo(room.Accessible));
         }
         
-        
-        
-        
-
-        
-        
-        //[TestCase(2,2,ExpectedResult = 4)] 
+        [TestCase(2,2,ExpectedResult = 4)] 
         public int AddNumbersUsingExpectedResult(int number, int anotherNumber)
         {
             var answer = number + anotherNumber;
@@ -221,8 +194,8 @@ namespace TestingWithNUnit.Tests
             Assert.That(createdRoom.Accessible, Is.EqualTo(room.Accessible));
         }
 
-        //[Test]
-        //[Pairwise]
+        [Test]
+        [Pairwise]
         public void AddRoomWithValues(
             [Values("9","999")]string roomNumber,
             [Values("100","1000")] string Price,
@@ -250,7 +223,7 @@ namespace TestingWithNUnit.Tests
         }
 
         
-        //[Test]
+        [Test]
         public void AddRoomUsingValueSource([ValueSource("RoomData")] Room room)
         {
             
@@ -276,7 +249,7 @@ namespace TestingWithNUnit.Tests
         }
         
         
-        //[TestCaseSource(typeof(TestData),nameof(TestData.RoomData))]
+        [TestCaseSource(typeof(TestData),nameof(TestData.RoomInfo))]
         public void AddRoomUsingTestCaseSource(string roomNumber, string price, RoomType roomType)
         {
             var room = new Room()

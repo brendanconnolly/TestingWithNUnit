@@ -2,9 +2,6 @@ using NUnit.Framework;
 
 namespace TestingWithNUnit.Tests
 {
-    
-    
-    
     [TestFixture]
     [Parallelizable]
     public class EqualityAssertions
@@ -19,29 +16,12 @@ namespace TestingWithNUnit.Tests
             Assert.That("actual", Is.EqualTo("expected"));
         }
 
-
-
-
-
-
-
-
-
         [Test]
         public void AreNotEqual()
         {
             Assert.AreNotEqual("expected", "actual");
 
         }
-
-
-
-
-
-
-
-
-
 
         [Test]
         public void AreEqualWithDescription()
@@ -78,8 +58,6 @@ namespace TestingWithNUnit.Tests
             Assert.AreEqual(2, 23, .5);
         }
 
-
-
         [Test]
         public void AreEqualArrays()
         {
@@ -87,8 +65,6 @@ namespace TestingWithNUnit.Tests
             var actual = new int[] { 1, 3, 4 };
             Assert.AreEqual(expected, actual);
         }
-
-
 
         [Test]
         public void AreObjectsEqual()
@@ -111,19 +87,11 @@ namespace TestingWithNUnit.Tests
             Assert.AreSame(obj1, obj2);
         }
 
-
-
-
-
-
         [Test]
         public void ComparingRelativeValues()
         {
             Assert.GreaterOrEqual(2, 3);
         }
-
-
-
 
 
         [Test]
@@ -133,25 +101,6 @@ namespace TestingWithNUnit.Tests
             Assert.IsEmpty(myString);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [Test]
         public void AreEqualArrays1()
         {
@@ -160,7 +109,6 @@ namespace TestingWithNUnit.Tests
             Assert.AreEqual(expected, actual);
         }
 
-
         [Test]
         public void ContainsOneInstanceOfThree()
         {
@@ -168,7 +116,6 @@ namespace TestingWithNUnit.Tests
             //Assert.AreEqual(1,arrayOfValues.Count(x => x.Equals(3)));
             Assert.That(arrayOfValues, Has.One.EqualTo(3));
         }
-
 
         [Test]
         public void IsMoreThanFiveAndLessThan100()

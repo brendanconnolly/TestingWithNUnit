@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using RestfulBooker.UI.Data;
 
-namespace TestingWithNUnit.Tests
+namespace TestingWithNUnit.Tests.Data
 {
     public class TestData
     {

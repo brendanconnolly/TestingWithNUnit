@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using RestfulBooker.UI.Data;
 
-namespace TestingWithNUnit.Tests
+namespace TestingWithNUnit.Tests.Data
 {
     
     public class ExternalRoomData
